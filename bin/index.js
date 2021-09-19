@@ -7,6 +7,7 @@ import ora from "ora";
 import "dotenv/config.js";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
+import Table from "cli-table";
 
 // Args
 const argv = yargs(hideBin(process.argv)).argv;
@@ -117,7 +118,17 @@ async function init() {
   spinner.succeed(
     `Found ${dopeAssetsWithPaper.length} DOPE under ${basePrice} ETH with $PAPER`
   );
-  console.table(dopeAssetsWithPaperSorted);
+
+  const table = new Table({
+    style: { head: ["green"] },
+    head: ["Token ID", "Price"],
+  });
+
+  dopeAssetsWithPaperSorted.forEach((dope) => {
+    table.push([dope.id, dope.price]);
+  });
+
+  console.log(table.toString());
   console.log(`💵 💵 💵 ... get that $PAPER`);
 }
 
