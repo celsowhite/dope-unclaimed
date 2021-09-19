@@ -14,6 +14,8 @@ npm install -g .
 
 # Run
 
+Run the dope-unclaimed command with an --eth argument. ETH is the max price of $DOPE you want to check for.
+
 ```
 dope-unclaimed --eth=1
 ```

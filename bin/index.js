@@ -17,7 +17,7 @@ Setup Web3
 
 const dopeContractAddress = `0x8707276df042e89669d69a177d3da7dc78bd8723`;
 const paperContractAddress = `0x7aE1D57b58fA6411F32948314BadD83583eE0e8C`;
-const dopeCount = 1000;
+const dopeCount = 8000;
 const basePrice = argv.eth ? argv.eth : 1; // ETH
 
 // Setup the provider.
